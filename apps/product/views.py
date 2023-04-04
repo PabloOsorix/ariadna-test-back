@@ -250,7 +250,7 @@ class DeleteProductView(APIView):
     def delete(self, request, format=None):
 
         product_id = self.request.query_params.get('product_id')
-        print(product_id)
+
         try:
             product_id = int(product_id)
         except:

@@ -86,10 +86,10 @@ class NewCategoryView(APIView):
 class DeleteCategoryView(APIView):
     permission_classes = (permissions.AllowAny,)
     def delete(self, request, format=None):
-        data = self.request.data
+        category_id = self.request.query_params.get('category_id')
 
         try:
-            category_id = int(data['category_id'])
+            category_id = int(category_id)
 
         except:
             return Response(
